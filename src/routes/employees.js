@@ -1,13 +1,12 @@
-/* eslint-disable consistent-return */
 const express = require('express');
 const schema = require('../db/schema');
-const db = require('../db/connection');
+//const db = require('../db/connection');
 
-const employees = db.get('employees');
+//const employees = db.get('employees');
 
 const router = express.Router();
 
-/* Get all employees */
+/*
 router.get('/', async (req, res, next) => {
   try {
     const allEmployees = await employees.find({});
@@ -17,7 +16,6 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-/* Get a specific employee */
 router.get('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -36,7 +34,6 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
-/* Create a new employee */
 router.post('/', async (req, res, next) => {
   try {
     const { name, job } = req.body;
@@ -46,7 +43,6 @@ router.post('/', async (req, res, next) => {
       name,
     });
 
-    // Employee already exists
     if (employee) {
       const error = new Error('Employee already exists');
       res.status(409); // conflict error
@@ -64,7 +60,6 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-/* Update a specific employee */
 router.put('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -74,7 +69,6 @@ router.put('/:id', async (req, res, next) => {
       _id: id,
     });
 
-    // Employee does not exist
     if (!employee) {
       return next();
     }
@@ -90,7 +84,6 @@ router.put('/:id', async (req, res, next) => {
   }
 });
 
-/* Delete a specific employee */
 router.delete('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -98,7 +91,6 @@ router.delete('/:id', async (req, res, next) => {
       _id: id,
     });
 
-    // Employee does not exist
     if (!employee) {
       return next();
     }
@@ -112,6 +104,6 @@ router.delete('/:id', async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-});
+});*/
 
 module.exports = router;

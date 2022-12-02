@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 
-const { notFound, errorHandler } = require('./middlewares');
+//const { notFound, errorHandler } = require('./middlewares');
 
 const app = express();
 
@@ -17,7 +17,7 @@ const employees = require('./routes/employees');
 
 app.use('/api/employees', employees);
 
-app.use(notFound);
-app.use(errorHandler);
+//app.use(notFound);
+//app.use(errorHandler);
 
 module.exports = app;
