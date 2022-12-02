@@ -8,4 +8,4 @@ const schema = new Client({
   password: '987456'
 });
 
-module.exports = schema;
+module.exports = schema
