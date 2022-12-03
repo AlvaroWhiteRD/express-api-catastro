@@ -6,6 +6,15 @@ const schema = require('../db/schema');
 
 const router = express.Router();
 
+
+router.get('/api/catastro', async (req, res, next) => {
+  try {
+    //const allEmployees = await employees.find({});
+    //);
+  } catch (error) {
+    next(error);
+  }
+});
 /*
 router.get('/', async (req, res, next) => {
   try {

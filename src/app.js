@@ -13,9 +13,12 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-const employees = require('./routes/employees');
-
-app.use('/api/employees', employees);
+//const catastro = require('./routes/catastro');
+//catastro.get
+app.get('/api/catastro', function (req, res) {
+    res.send('Ruta INICIO '+req);
+});
+//app.use('/api/catastro', catastro);
 
 //app.use(notFound);
 //app.use(errorHandler);
